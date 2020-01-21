@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.Craffic</groupId>
+        <artifactId>my-shop</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>myshop-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <name>my-shop-dependencies</name>
+    <description></description>
+
+    <properties>
+        <!-- 环境配置 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.7</java.version>
+
+        <!-- 统一的依赖管理 -->
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <commons-email.version>1.5</commons-email.version>
+        <jstl.version>1.2</jstl.version>
+        <log4j.version>1.2.17</log4j.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <spring.version>4.3.17.RELEASE</spring.version>
+        <alibaba-druid.version>1.1.6</alibaba-druid.version>
+        <!--<oracle.version>11.2.0.3</oracle.version>-->
+        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis-spring>1.3.1</mybatis-spring>
+        <spring-jdbc>4.3.17.RELEASE</spring-jdbc>
+        <jackson-Json>2.9.8</jackson-Json>
+        <lombok.version>1.16.18</lombok.version>
+        <hibernate-validator.version>5.3.4.Final</hibernate-validator.version>
+        <commons-fileupload.version>1.3.2</commons-fileupload.version>
+        <httpclient.version>4.5.5</httpclient.version>
+        <mysql.version>5.1.47</mysql.version>
+    </properties>
+
+    <build>
+        <!--  maven-install-plugin Begin -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <!--  maven-install-plugin End -->
+
+        <plugins>
+            <!-- Compiler 插件, 设定 JDK 版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showWarnings>true</showWarnings>
+                    <executable>
+                        E:\install\jdk1.7.0_80\bin\javac.exe
+                    </executable>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!-- 资源文件配置 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+</project>

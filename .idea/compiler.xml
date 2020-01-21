@@ -6,21 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="my-shop-mvc-service" />
+        <module name="my-shop-domain" />
         <module name="myshop-mvc-service" />
+        <module name="my-shop-mvc-service (1)" />
         <module name="myshop-jersey-service" />
         <module name="myshop" />
-        <module name="my-shop-mvc-service (1)" />
+        <module name="my-shop-mvc-service" />
+        <module name="myshop-commons" />
         <module name="my-shop-mvc-service (2)" />
         <module name="my-shop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="my-shop" target="1.5" />
+      <module name="my-shop-domain" target="1.7" />
       <module name="my-shop-mvc-service" target="1.5" />
       <module name="my-shop-mvc-service (1)" target="1.8" />
       <module name="my-shop-mvc-service (2)" target="1.8" />
       <module name="myshop" target="1.8" />
+      <module name="myshop-commons" target="1.7" />
+      <module name="myshop-dependencies" target="1.7" />
       <module name="myshop-jersey-service" target="1.8" />
       <module name="myshop-mvc-service" target="1.8" />
     </bytecodeTargetLevel>
@@ -28,10 +33,12 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="my-shop" options="-parameters" />
+      <module name="my-shop-domain" options="-parameters" />
       <module name="my-shop-mvc-service" options="-parameters" />
       <module name="my-shop-mvc-service (1)" options="-parameters" />
       <module name="my-shop-mvc-service (2)" options="-parameters" />
       <module name="myshop" options="-parameters" />
+      <module name="myshop-commons" options="-parameters" />
       <module name="myshop-jersey-service" options="-parameters" />
       <module name="myshop-mvc-service" options="-parameters" />
     </option>

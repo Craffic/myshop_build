@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/myshop-jersey-service/pom.xml" />
         <option value="$PROJECT_DIR$/myshop-mvc-service/pom.xml" />
+        <option value="$PROJECT_DIR$/myshop-dependencies/pom.xml" />
+        <option value="$PROJECT_DIR$/myshop-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/myshop-domain/pom.xml" />
       </list>
     </option>
   </component>
