@@ -5,18 +5,19 @@
 
     <parent>
         <groupId>com.Craffic</groupId>
-        <artifactId>myshop-dependencies</artifactId>
+        <artifactId>myshop-commons</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../my-shop-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>my-shop-domain</artifactId>
+    <artifactId>myshop-domain</artifactId>
     <packaging>jar</packaging>
 
     <name>myshop-domain</name>
     <description></description>
 
     <dependencies>
+        <!--依赖commons项目-->
         <dependency>
             <groupId>com.Craffic</groupId>
             <artifactId>myshop-commons</artifactId>

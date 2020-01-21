@@ -1,31 +1,36 @@
 package com.Craffic.myshop.jersey.action;
 
-import com.Craffic.myshop.jersey.model.User;
+import com.Craffic.myshop.jersey.service.UserService;
+import com.Craffic.myshop.jersey.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.*;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import com.Craffic.myshop.domain.model.TbUser;
 
 @Component
 @Path("/user")
 public class UserAction {
 
-    //http://localhost:8080/services/v1/user/xml?userName=lisi&age=23
+    @Autowired
+    UserServiceImpl userService;
+
+    //http://localhost:8080/services/v1/user/detail/1
     @GET
-    @Path("/xml")
+    @Path("detail/{userId}")
     @Produces({MediaType.TEXT_HTML,MediaType.APPLICATION_JSON})
-    public String queryUserName(@QueryParam("userName") String userName,
-                                @QueryParam("age") int age) {
+    public String queryUserById(@PathParam("userId") String userId) {
 
-        return userName+"   "+age;
-    }
-
-    @POST
-    @Path("/beanParam")
-    @Produces({MediaType.APPLICATION_JSON+"; charset=UTF-8"})
-    public String testBeanParam(@BeanParam User user){
-
-        return "{\"name\":\"" + user.toString() + "\"}";
+        TbUser userDetail = userService.getTbUSerDetail(userId);
+        if (userDetail == null){
+            return "请输入有效的用户ID！";
+        }
+        return userDetail.toString();
     }
 
 }
