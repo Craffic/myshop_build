@@ -14,12 +14,6 @@ public class UserController {
     @Autowired
     UserServiceImpl userService;
 
-    @RequestMapping(value = "/sayHi", method = RequestMethod.GET)
-    public String sayHi(){
-        System.out.println("hello spring boot mvc");
-        return "hello spring boot mvc";
-    }
-
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public String queryUserById(TbUser tbUser){
 
