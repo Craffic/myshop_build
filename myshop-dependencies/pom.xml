@@ -13,14 +13,14 @@
     <artifactId>myshop-dependencies</artifactId>
     <packaging>pom</packaging>
 
-    <name>my-shop-dependencies</name>
+    <name>myshop-dependencies</name>
     <description></description>
 
     <properties>
         <!-- 环境配置 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
 
         <!-- 统一的依赖管理 -->
         <commons-lang3.version>3.5</commons-lang3.version>
@@ -37,7 +37,7 @@
         <spring-jdbc>4.3.17.RELEASE</spring-jdbc>
         <jackson-Json>2.10.2</jackson-Json>
         <lombok.version>1.16.18</lombok.version>
-        <hibernate-validator.version>5.3.4.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.0.18.Final</hibernate-validator.version>
         <commons-fileupload.version>1.3.2</commons-fileupload.version>
         <httpclient.version>4.5.5</httpclient.version>
         <mysql.version>5.1.47</mysql.version>

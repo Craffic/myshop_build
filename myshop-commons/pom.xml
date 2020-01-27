@@ -7,7 +7,7 @@
         <groupId>com.Craffic</groupId>
         <artifactId>myshop-dependencies</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../my-shop-dependencies/pom.xml</relativePath>
+        <relativePath>../myshop-dependencies/pom.xml</relativePath>
     </parent>
 
     <artifactId>myshop-commons</artifactId>
