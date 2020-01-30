@@ -1,19 +1,16 @@
-package com.Craffic.myshop.mvc.web.service.impl;
+package com.Craffic.myshop.mvc.service.impl;
 
 import com.Craffic.myshop.domain.model.TbUser;
 import com.Craffic.myshop.mvc.dao.TbUserDao;
-import com.Craffic.myshop.mvc.web.service.UserService;
+import com.Craffic.myshop.mvc.service.M_TbUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class UserServiceImpl implements UserService {
-
+public class M_TbUserServiceImpl implements M_TbUserService {
     @Autowired
     TbUserDao userDao;
 
     @Override
-    public TbUser getTbUSerDetail(String userId) {
+    public TbUser getTbUserDetail(String userId) {
         if (userId == null){
             return null;
         }
@@ -24,5 +21,4 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
-
 }

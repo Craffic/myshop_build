@@ -11,6 +11,7 @@
     <groupId>com.Craffic</groupId>
     <artifactId>my-shop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>my-shop</name>
     <description>my-shop</description>
 

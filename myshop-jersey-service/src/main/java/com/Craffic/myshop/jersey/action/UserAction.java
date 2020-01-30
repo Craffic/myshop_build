@@ -26,7 +26,7 @@ public class UserAction {
     @Produces({MediaType.TEXT_HTML,MediaType.APPLICATION_JSON})
     public String queryUserById(@PathParam("userId") String userId) {
 
-        TbUser userDetail = userService.getTbUSerDetail(userId);
+        TbUser userDetail = userService.getTbUserDetail(userId);
         if (userDetail == null){
             return "请输入有效的用户ID！";
         }

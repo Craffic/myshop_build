@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     TbUserDao userDao;
 
     @Override
-    public TbUser getTbUSerDetail(String userId) {
+    public TbUser getTbUserDetail(String userId) {
         if (userId == null){
             return null;
         }
