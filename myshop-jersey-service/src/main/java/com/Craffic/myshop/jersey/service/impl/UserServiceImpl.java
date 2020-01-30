@@ -1,11 +1,17 @@
 package com.Craffic.myshop.jersey.service.impl;
 
 import com.Craffic.myshop.domain.model.TbUser;
+import com.Craffic.myshop.jersey.dao.TbUserDao;
 import com.Craffic.myshop.jersey.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    TbUserDao userDao;
+
     @Override
     public TbUser getTbUSerDetail(String userId) {
         if (userId == null){
@@ -13,12 +19,8 @@ public class UserServiceImpl implements UserService {
         }
 
         TbUser user = new TbUser();
-        if (Long.parseLong(userId) == 1L){
-            user.setId(1L);
-            user.setUserName("zhangsan");
-            user.setPassword("123456");
-            user.setPhone("13428282526");
-            user.setEmail("39230111@qq.com");
+        if (Long.parseLong(userId) == 3L){
+              user = userDao.selectById(Long.parseLong(userId));
         }
         return user;
     }

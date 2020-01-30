@@ -30,17 +30,19 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         <slf4j.version>1.7.25</slf4j.version>
         <spring.version>4.3.17.RELEASE</spring.version>
-        <alibaba-druid.version>1.1.6</alibaba-druid.version>
-        <!--<oracle.version>11.2.0.3</oracle.version>-->
-        <mybatis.version>3.2.8</mybatis.version>
+        <oracle.version>11.2.0.3</oracle.version>
+        <mybatis.version>3.4.6</mybatis.version>
         <mybatis-spring>1.3.1</mybatis-spring>
+        <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
         <spring-jdbc>4.3.17.RELEASE</spring-jdbc>
         <jackson-Json>2.10.2</jackson-Json>
-        <lombok.version>1.16.18</lombok.version>
+        <lombok.version>1.18.10</lombok.version>
         <hibernate-validator.version>6.0.18.Final</hibernate-validator.version>
         <commons-fileupload.version>1.3.2</commons-fileupload.version>
         <httpclient.version>4.5.5</httpclient.version>
         <mysql.version>5.1.47</mysql.version>
+        <druid-spring-boot-starter.version>1.1.21</druid-spring-boot-starter.version>
+        <druid.version>1.1.6</druid.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +81,46 @@
             </dependency>
             <!--Json End-->
 
+            <!--database begin-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle.version}</version>
+            </dependency>
+            <!--database end-->
+            
+            <!--mybatis Begin-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring-jdbc}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <!--mybatis End-->
         </dependencies>
     </dependencyManagement>
 
@@ -107,7 +149,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <showWarnings>true</showWarnings>
                     <executable>
-                        E:\install\jdk1.7.0_80\bin\javac.exe
+                        C:\Program Files\Java\jdk1.8.0_192\bin\javac.exe
                     </executable>
                 </configuration>
             </plugin>
