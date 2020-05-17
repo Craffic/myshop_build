@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,11 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @MapperScan(basePackages = "com.Craffic.myshop.jersey.dao")
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @SpringBootApplication
+// 启动定时器
+@EnableScheduling
 public class MyshopJerseyApplication {
     @RequestMapping(value = "/sayHi", method = RequestMethod.GET)
     public String sayHi(){
-        System.out.println("hello spring boot 111");
-        return "hello spring boot 111";
+        System.out.println("hello spring boot");
+        return "hello spring boot";
     }
 
     public static void main(String[] args) {

@@ -15,13 +15,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public TbUser getTbUserDetail(String userId) {
         if (userId == null){
-            return null;
+            throw new RuntimeException("用户id不能为空");
         }
-
-        TbUser user = new TbUser();
-        if (Long.parseLong(userId) == 3L){
-              user = userDao.selectById(Long.parseLong(userId));
-        }
-        return user;
+        return userDao.selectById(Long.parseLong(userId));
     }
 }
