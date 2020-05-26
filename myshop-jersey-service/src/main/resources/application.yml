@@ -5,10 +5,10 @@ spring:
       force: true
   datasource:
     druid:
-      url: jdbc:oracle:thin:@localhost:1521:DGLOAN
-      username: student
+      url: jdbc:oracle:thin:@localhost:1521:DEV
+      username: Craffic
       #driver-class-name: oracle.jdbc.driver.OracleDriver
-      password: lipsadmins
+      password: Craffic
       driver-class-name: oracle.jdbc.OracleDriver
 server:
   port: 8080
@@ -18,3 +18,54 @@ server:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.Craffic.myshop.domain.model
+
+  application:
+    name: myshop-jersey-service
+# UserService service version
+user:
+  service:
+    version: 1.0.0
+
+# Dubbo Config properties
+dubbo:
+  ## Base packages to scan Dubbo Component：@com.alibaba.dubbo.config.annotation.Service
+  scan:
+    basePackages: com.Craffic.myshop.jersey.provider.api
+  application:
+    id: myshop-jersey-service
+    name: myshop-jersey-service
+    qos-port: 22222
+    qos-enable: true
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+    status: server
+
+  registry:
+    id: zookeeper
+    address: zookeeper://192.168.1.103:2181?backup=192.168.1.103:2182,192.168.1.103:2183
+
+# Enables Dubbo All Endpoints
+management:
+  endpoint:
+    dubbo:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-configs:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-references:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+  # Dubbo Health
+  health:
+    dubbo:
+      status:
+        ## StatusChecker Name defaults (default : "memory", "load" )
+        defaults: memory
+        ## StatusChecker Name extras (default : empty )
+        extras: load,threadpool
