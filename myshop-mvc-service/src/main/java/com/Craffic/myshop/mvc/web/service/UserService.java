@@ -1,9 +1,9 @@
 package com.Craffic.myshop.mvc.web.service;
 
-import com.Craffic.myshop.domain.model.TbUser;
+import com.Craffic.myshop.mvc.domain.vo.M_TbUserVo;
 
 public interface UserService {
 
-    TbUser getTbUSerDetail(String userId);
+    M_TbUserVo getTbUSerDetail(String userId);
 
 }

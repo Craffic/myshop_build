@@ -1,8 +1,8 @@
 package com.Craffic.myshop.mvc.dao;
 
-import com.Craffic.myshop.domain.model.TbUser;
+import com.Craffic.myshop.mvc.domain.vo.M_TbUserVo;
 import org.apache.ibatis.annotations.Param;
 
 public interface TbUserDao {
-    TbUser selectById(@Param("id") Long id);
+    M_TbUserVo selectById(@Param("id") Long id);
 }

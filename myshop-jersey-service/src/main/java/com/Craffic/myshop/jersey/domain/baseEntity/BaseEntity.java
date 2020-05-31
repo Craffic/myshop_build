@@ -1,13 +1,9 @@
-package com.Craffic.myshop.domain;
+package com.Craffic.myshop.jersey.domain.baseEntity;
 
-import lombok.Builder;
 import lombok.Data;
-
 import java.util.Date;
-
 @Data
 public class BaseEntity {
-
     /**
      * 每个对象共同属性：id， 创建日期， 更新日期
      */

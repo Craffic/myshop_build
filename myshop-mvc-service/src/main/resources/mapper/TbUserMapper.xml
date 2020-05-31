@@ -4,14 +4,13 @@
     <sql id="TbUserColumns">
         u.id,
         u.username,
-        u.password,
         u.phone,
         u.email,
         u.created,
         u.updated
     </sql>
 
-    <select id="selectById" resultType="com.Craffic.myshop.domain.model.TbUser">
+    <select id="selectById" resultType="com.Craffic.myshop.mvc.domain.vo.M_TbUserVo">
       SELECT * FROM TB_USER T WHERE T.ID = #{id}
     </select>
 </mapper>

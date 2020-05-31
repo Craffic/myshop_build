@@ -18,8 +18,6 @@
     <modules>
         <module>myshop-jersey-service</module>
         <module>myshop-mvc-service</module>
-        <module>myshop-commons</module>
         <module>myshop-dependencies</module>
-        <module>myshop-domain</module>
     </modules>
 </project>

@@ -11,7 +11,13 @@
         u.updated
     </sql>
 
-    <select id="selectById" resultType="com.Craffic.myshop.domain.model.TbUser">
+    <select id="selectById" resultType="com.Craffic.myshop.jersey.domain.model.TbUser">
       SELECT * FROM TB_USER T WHERE T.ID = #{id}
+    </select>
+
+    <select id="getUserList" resultType="com.Craffic.myshop.jersey.domain.vo.TbUserVo">
+      SELECT
+        <include refid="TbUserColumns" />
+       FROM TB_USER U
     </select>
 </mapper>

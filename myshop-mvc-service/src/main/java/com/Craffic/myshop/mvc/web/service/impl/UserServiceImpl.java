@@ -1,7 +1,8 @@
 package com.Craffic.myshop.mvc.web.service.impl;
 
-import com.Craffic.myshop.domain.model.TbUser;
 import com.Craffic.myshop.mvc.dao.TbUserDao;
+import com.Craffic.myshop.mvc.domain.model.M_TbUser;
+import com.Craffic.myshop.mvc.domain.vo.M_TbUserVo;
 import com.Craffic.myshop.mvc.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +14,12 @@ public class UserServiceImpl implements UserService {
     TbUserDao userDao;
 
     @Override
-    public TbUser getTbUSerDetail(String userId) {
+    public M_TbUserVo getTbUSerDetail(String userId) {
         if (userId == null){
             return null;
         }
 
-        TbUser user = new TbUser();
+        M_TbUserVo user = new M_TbUserVo();
         if (Long.parseLong(userId) == 3L){
             user = userDao.selectById(Long.parseLong(userId));
         }

@@ -1,4 +1,4 @@
-package com.Craffic.myshop.commons.utils;
+package com.Craffic.myshop.mvc.utils;
 
 public class RegexpUtils {
     /**

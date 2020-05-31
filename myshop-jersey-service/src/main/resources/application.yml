@@ -30,7 +30,7 @@ user:
 dubbo:
   ## Base packages to scan Dubbo Component：@com.alibaba.dubbo.config.annotation.Service
   scan:
-    basePackages: com.Craffic.myshop.jersey.provider.api
+    basePackages: com.Craffic.myshop.jersey
   application:
     id: myshop-jersey-service
     name: myshop-jersey-service
@@ -44,7 +44,8 @@ dubbo:
 
   registry:
     id: zookeeper
-    address: zookeeper://192.168.1.103:2181?backup=192.168.1.103:2182,192.168.1.103:2183
+    #address: zookeeper://192.168.1.103:2181?backup=192.168.1.103:2182,192.168.1.103:2183
+    address: zookeeper://192.168.1.104:2181?backup=192.168.1.104:2182,192.168.1.104:2183
 
 # Enables Dubbo All Endpoints
 management:

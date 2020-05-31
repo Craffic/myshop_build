@@ -1,14 +1,11 @@
-package com.Craffic.myshop.jersey.service;
+package com.Craffic.myshop.jersey.api;
 
-import com.Craffic.myshop.jersey.domain.model.TbUser;
 import com.Craffic.myshop.jersey.domain.vo.TbUserVo;
 import com.alibaba.dubbo.config.annotation.Service;
+
 import java.util.List;
 
 @Service(version = "1.0.0")
-public interface UserService {
-
-    TbUser getTbUserDetail(String userId);
-
+public interface apiUserService {
     public List<TbUserVo> getUserList();
 }
