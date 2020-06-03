@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Craffic.myshop.jersey.dao.TbKafkaInMsgDao">
+    <sql id="TbKafkaInMsgColumns">
+        ID,
+        DOCUMENT_NO,
+        HANDLE_FLAG,
+        SERVER_ID,
+        CREATED,
+        UPDATED
+    </sql>
+
+    <select id="selectByServerId" parameterType="java.lang.Long" resultType="com.Craffic.myshop.jersey.domain.vo.TbKafkaInMsgVo">
+      SELECT
+        <include refid="TbKafkaInMsgColumns" />
+       FROM TB_KAFKA_IN_MSG WHERE SERVER_ID = #{serverId}
+    </select>
+
+    <insert id="saveInMassage" parameterType="com.Craffic.myshop.jersey.domain.model.TbKafkaInMsg">
+        insert into TB_KAFKA_IN_MSG
+          (ID, DOCUMENT_NO, HANDLE_FLAG, SERVER_ID, CREATED, UPDATED)
+        VALUES
+          (#{id}, #{documentNo}, #{handleFlag}, #{serverId}, SYSDATE, SYSDATE)
+    </insert>
+</mapper>
