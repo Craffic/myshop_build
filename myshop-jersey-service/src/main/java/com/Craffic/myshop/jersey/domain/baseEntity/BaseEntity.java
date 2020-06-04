@@ -7,7 +7,7 @@ public class BaseEntity {
     /**
      * 每个对象共同属性：id， 创建日期， 更新日期
      */
-    private Long id;
+    private String id;
     private Date created;
     private Date updated;
 }

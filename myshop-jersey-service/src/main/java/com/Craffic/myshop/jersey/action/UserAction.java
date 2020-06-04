@@ -1,5 +1,6 @@
 package com.Craffic.myshop.jersey.action;
 
+import com.Craffic.myshop.jersey.Utils.IdcardAreaGenerator;
 import org.springframework.stereotype.Component;
 
 

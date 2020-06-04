@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Craffic.myshop.jersey.dao.IdcardAreaDao">
+    <sql id="AreaColumns">
+        A.id,
+        A.AREA_CODE,
+        A.AREA_NAME,
+        A.created,
+        A.updated
+    </sql>
+
+    <select id="getAreaList" resultType="com.Craffic.myshop.jersey.domain.vo.IdcardAreaVo">
+      SELECT
+        <include refid="AreaColumns" />
+       FROM IdCard_AREA A
+    </select>
+
+    <insert id="insertArea" parameterType="com.Craffic.myshop.jersey.domain.model.IdCardArea">
+        INSERT INTO IdCard_AREA
+            (id, AREA_CODE, AREA_NAME, created, updated)
+        VALUES
+            (SYS_GUID(), #{areaCode}, #{areaName}, sysdate, sysdate)
+    </insert>
+</mapper>

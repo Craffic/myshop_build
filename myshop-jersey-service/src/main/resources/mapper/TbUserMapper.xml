@@ -20,4 +20,12 @@
         <include refid="TbUserColumns" />
        FROM TB_USER U
     </select>
+
+    <insert id="insertTbUser" parameterType="com.Craffic.myshop.jersey.domain.model.TbUser">
+        INSERT INTO TB_USER
+            (id, username, password, phone, email, created, updated)
+        VALUES
+            (SYS_GUID(), #{userName}, #{password,jdbcType=VARCHAR}, #{phone}, #{email}, sysdate, sysdate)
+
+    </insert>
 </mapper>

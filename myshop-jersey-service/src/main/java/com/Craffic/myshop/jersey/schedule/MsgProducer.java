@@ -38,7 +38,7 @@ public class MsgProducer {
         );
         TbKafkaInMsg inMsg = new TbKafkaInMsg();
         inMsg.setServerId(System.currentTimeMillis());
-        inMsg.setId(0L);
+        inMsg.setId("0");
         inMsg.setDocumentNo("12345");
         inMsg.setCreated(new Date());
         inMsg.setUpdated(new Date());

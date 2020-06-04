@@ -9,3 +9,13 @@ create table TB_KAFKA_IN_MSG
   updated  DATE
 );
 SELECT * FROM TB_kafka_in_msg;
+
+--身份证前六位地区编号
+create table IdCard_AREA
+(
+  id        VARCHAR2(50) not null PRIMARY KEY,
+  AREA_CODE NUMBER(10),
+  AREA_NAME VARCHAR2(50),
+  created   DATE,
+  updated   DATE
+)
