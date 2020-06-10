@@ -88,3 +88,8 @@ management:
         defaults: memory
         ## StatusChecker Name extras (default : empty )
         extras: load,threadpool
+
+#线程池
+async:
+  executeor:
+    corePoolSize: 10

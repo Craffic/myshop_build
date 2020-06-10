@@ -15,6 +15,10 @@
       SELECT * FROM TB_USER T WHERE T.ID = #{id}
     </select>
 
+    <select id="countUser" resultType="java.lang.Integer">
+      SELECT count (1) FROM TB_USER
+    </select>
+
     <select id="getUserList" resultType="com.Craffic.myshop.jersey.domain.vo.TbUserVo">
       SELECT
         <include refid="TbUserColumns" />
