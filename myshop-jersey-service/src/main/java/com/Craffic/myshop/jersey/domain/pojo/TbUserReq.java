@@ -2,10 +2,15 @@ package com.Craffic.myshop.jersey.domain.pojo;
 
 import com.Craffic.myshop.jersey.Utils.RegexpUtils;
 import com.Craffic.myshop.jersey.domain.baseEntity.BaseEntity;
+import com.Craffic.myshop.jersey.domain.baseEntity.BaseRequestEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Pattern;
-public class TbUserReq extends BaseEntity {
+import javax.ws.rs.DefaultValue;
+
+@Data
+public class TbUserReq extends BaseRequestEntity {
     private String userName;
 
     /**

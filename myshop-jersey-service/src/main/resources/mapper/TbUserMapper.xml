@@ -30,6 +30,44 @@
             (id, username, password, phone, email, created, updated)
         VALUES
             (SYS_GUID(), #{userName}, #{password,jdbcType=VARCHAR}, #{phone}, #{email}, sysdate, sysdate)
-
     </insert>
+
+    <select id="findUsersByCondition" parameterType="com.Craffic.myshop.jersey.domain.pojo.TbUserReq" resultType="com.Craffic.myshop.jersey.domain.vo.TbUserVo">
+        SELECT
+        <include refid="TbUserColumns" />
+        FROM TB_USER U
+        where 1=1
+        <if test=" id != null and id != ''">
+            and U.id = #{id}
+        </if>
+        <if test="userName != null and userName != ''">
+            and U.username = #{userName}
+        </if>
+        <if test="phone != null and phone != ''">
+            and U.phone = #{phone}
+        </if>
+        <if test="email != null and email != ''">
+            and U.email = #{email}
+        </if>
+    </select>
+
+    <select id="countUsersByCondition" parameterType="com.Craffic.myshop.jersey.domain.pojo.TbUserReq" resultType="java.lang.Integer">
+        SELECT
+        count(1)
+        FROM TB_USER U
+        where 1=1
+        <if test=" id != null and id != ''">
+            and U.id = #{id}
+        </if>
+        <if test="userName != null and userName != ''">
+            and U.username = #{userName}
+        </if>
+        <if test="phone != null and phone != ''">
+            and U.phone = #{phone}
+        </if>
+        <if test="email != null and email != ''">
+            and U.email = #{email}
+        </if>
+    </select>
+
 </mapper>

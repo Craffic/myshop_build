@@ -3,6 +3,7 @@ package com.Craffic.myshop.jersey.service.impl;
 import com.Craffic.myshop.jersey.dao.TbUserDao;
 import com.Craffic.myshop.jersey.domain.vo.TbUserVo;
 import com.Craffic.myshop.jersey.thread.QueryUserInfoTread;
+import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class ThreadServiceImpl {
 
         // 查询出TbUser表所有用户数
         Integer totalUserCount = userDao.countUser();
-        List<TbUserVo> userList = userDao.getUserList();
+        List<TbUserVo> userList = userDao.getUserList(new RowBounds(1, 10));
         // 每个线程处理最多10条数据
         int maxSize = 100;
         // 计算开启线程数， 每个线程最大处理10条数据

@@ -4,6 +4,7 @@ import com.Craffic.myshop.jersey.api.apiUserService;
 import com.Craffic.myshop.jersey.dao.TbUserDao;
 import com.Craffic.myshop.jersey.domain.vo.TbUserVo;
 import com.alibaba.dubbo.config.annotation.Service;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
@@ -17,7 +18,7 @@ public class apiUserServiceImpl implements apiUserService {
 
     @Override
     public List<TbUserVo> getUserList(){
-        List<TbUserVo> userList = userDao.getUserList();
+        List<TbUserVo> userList = userDao.getUserList(new RowBounds(1, 10));
         return userList;
     }
 }

@@ -1,11 +1,7 @@
 package com.Craffic.myshop.jersey.schedule;
 
-import com.Craffic.myshop.jersey.Utils.IdcardAreaGenerator;
-import com.Craffic.myshop.jersey.Utils.MessageGenerator;
 import com.Craffic.myshop.jersey.dao.IdcardAreaDao;
 import com.Craffic.myshop.jersey.dao.TbUserDao;
-import com.Craffic.myshop.jersey.domain.model.IdCardArea;
-import com.Craffic.myshop.jersey.domain.model.TbUser;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,15 +10,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 
 @Slf4j
 @Component
 @EnableScheduling
-public class GenBoyNameSchedule {
+public class GenUserMessageSchedule {
     @Autowired
     private TbUserDao userDao;
 

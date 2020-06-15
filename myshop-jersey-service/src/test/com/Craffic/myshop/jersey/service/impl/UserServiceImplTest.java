@@ -3,6 +3,7 @@ package com.Craffic.myshop.jersey.service.impl;
 import com.Craffic.myshop.jersey.BaseRuleMock;
 import com.Craffic.myshop.jersey.dao.TbUserDao;
 import com.Craffic.myshop.jersey.domain.vo.TbUserVo;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -35,9 +36,10 @@ public class UserServiceImplTest  extends BaseRuleMock {
         userVo.setCreated(new Date());
         userVo.setUpdated(new Date());
         userVoList.add(null);
-        Mockito.when(userDao.getUserList()).thenReturn(userVoList);
+        Mockito.when(userDao.getUserList(new RowBounds(1, 10))).thenReturn(userVoList);
         List<TbUserVo> userList = userService.getUserList();
-        Assert.assertTrue(userList.size() == 1);
+        boolean condition = userList.size() == 1;
+        Assert.assertTrue(condition);
     }
 
 }
