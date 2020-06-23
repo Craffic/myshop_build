@@ -1,7 +1,6 @@
 package com.Craffic.myshop.jersey.domain.baseEntity;
 
 import com.alibaba.fastjson.JSONObject;
-import org.apache.kafka.common.protocol.types.Field;
 
 import java.io.Serializable;
 
