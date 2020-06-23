@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @PrepareForTest(UserServiceImpl.class)
-public class UserServiceImplTest  extends BaseRuleMock {
+public class UserServiceImplTest extends BaseRuleMock {
 
     @InjectMocks
     private UserServiceImpl userService;
