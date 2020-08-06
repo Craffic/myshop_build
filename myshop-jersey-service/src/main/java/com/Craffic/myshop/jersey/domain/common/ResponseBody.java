@@ -3,8 +3,12 @@ package com.Craffic.myshop.jersey.domain.common;
 import com.Craffic.myshop.jersey.domain.baseEntity.BaseVo;
 import com.Craffic.myshop.jersey.exception.ServerStatusCode;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+//@Data
+@Getter
+@Setter
 public class ResponseBody<T> extends BaseVo {
     private static final long serialVersionID  = -4213992025937477652L;
 
