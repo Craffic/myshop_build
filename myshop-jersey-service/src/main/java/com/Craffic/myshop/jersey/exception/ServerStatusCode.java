@@ -17,8 +17,9 @@ public abstract class ServerStatusCode implements ServerErrorCode{
 
     public static final ServerStatusCode
         SUCCESSFUL_OK = new InternalServiceStatusCode("200000", "处理成功"),
-        CLIENT_BAD_REQUEST_ERROR = new InternalServiceStatusCode("4XX001", "非法请求");
-
+        CLIENT_BAD_REQUEST_ERROR = new InternalServiceStatusCode("4XX001", "非法请求"),
+        REDIS_QUERY_ERROR = new InternalServiceStatusCode("500001", "插入redis数据失败"),
+        REDIS_INSERT_ERROR = new InternalServiceStatusCode("500002", "插入redis数据失败");
 
     protected ServerStatusCode(String code, String message, Object... arguments){
         if (code == null && message == null){

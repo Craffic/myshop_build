@@ -48,7 +48,6 @@ public class GenUserMessageSchedule {
         for (HashMap.Entry<String, Integer> entry : entries) {
             String areaName = entry.getKey();
             Integer areaId = entry.getValue();
-            System.out.println("编码： "+areaId+"  地区："+areaName);
 
             IdCardArea area = new IdCardArea();
             area.setAreaCode(areaId);

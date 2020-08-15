@@ -128,3 +128,85 @@ public class UserServiceImplTest  extends BaseRuleMock {
     }
 }
 ````
+
+*******************************************************************************************
+*******************************************************************************************
+*******************************************************************************************
+#2020年8月15日 10点56分
+##搭建SpringBoot整合redis+sentinel环境
+###1. 添加依赖
+````xml
+<!--redis begin-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.1.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+            <version>2.0.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <!--redis end-->
+````
+###2. 配置
+````
+  #Redis
+  redis:
+    cluster:
+      nodes: 192.168.40.133:6379,192.168.40.133:6380,192.168.40.133:6381
+    lettuce:
+      pool:
+        max-idle: 20
+        min-idle: 5
+        max-active: 80
+        max-wait: 1000s
+    sentinel:
+      nodes: 192.168.40.133:26379, 192.168.40.133:26380, 192.168.40.133:26381
+      master: mymaster
+  session:
+    #store-type: redis
+    redis:
+      flush-mode: immediate
+    store-type: none
+````
+
+###3. action
+````
+@POST
+      @Path("query/data")
+      @Produces({MediaType.TEXT_HTML,MediaType.APPLICATION_JSON})
+      public ResponseBody<String> rsaDecrypt(String str) throws Exception {
+          String value = redisUtil.queryByKey("Craffic");
+          return new ResponseBody("200000", value);
+      }
+````
+      
+      
+###4. redisTemplate
+      package com.Craffic.myshop.jersey.Utils.redis;
+      
+      import lombok.Data;
+      import lombok.extern.slf4j.Slf4j;
+      import org.springframework.beans.factory.annotation.Autowired;
+      import org.springframework.context.support.ApplicationObjectSupport;
+      import org.springframework.data.redis.core.RedisTemplate;
+      import org.springframework.stereotype.Component;
+      @Slf4j
+      @Data
+      @Component
+      public class RedisUtil extends ApplicationObjectSupport {
+          @Autowired
+          private RedisTemplate<String, String> redisTemplate;
+      
+          public String queryByKey(String key) {
+              String str = redisTemplate.opsForValue().get(key);
+              return str;
+          }
+      }
+      

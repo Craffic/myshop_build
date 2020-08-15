@@ -11,7 +11,7 @@ spring:
       password: Craffic
       driver-class-name: oracle.jdbc.OracleDriver
   kafka:
-    bootstrap-servers: 192.168.1.104:9092
+    bootstrap-servers: 192.168.40.133:9092
     producer:
       retries: 0
       batch-size: 16384
@@ -28,6 +28,19 @@ spring:
     listener:
       concurrency: 5
       ack-mode: manual_immediate
+  #Redis
+  redis:
+    cluster:
+      nodes: 192.168.40.133:6379,192.168.40.133:6380,192.168.40.133:6381
+    lettuce:
+      pool:
+        max-idle: 20
+        min-idle: 5
+        max-active: 80
+        max-wait: 1000s
+    sentinel:
+      nodes: 192.168.40.133:26379, 192.168.40.133:26380, 192.168.40.133:26381
+      master: mymaster
 
 server:
   port: 8081
@@ -63,8 +76,7 @@ dubbo:
 
   registry:
     id: zookeeper
-    #address: zookeeper://192.168.1.103:2181?backup=192.168.1.103:2182,192.168.1.103:2183
-    address: zookeeper://192.168.1.104:2181?backup=192.168.1.104:2182,192.168.1.104:2183
+    address: zookeeper://192.168.40.133:2181?backup=192.168.40.133:2182,192.168.40.133:2183
 
 # Enables Dubbo All Endpoints
 management:
