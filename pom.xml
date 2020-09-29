@@ -19,5 +19,6 @@
         <module>myshop-jersey-service</module>
         <module>myshop-mvc-service</module>
         <module>myshop-dependencies</module>
+        <module>myshop-mybatis-service</module>
     </modules>
 </project>
